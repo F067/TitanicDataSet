@@ -6,7 +6,7 @@ import RestartAltIcon from '@mui/icons-material/RestartAlt';
 import SearchIcon from '@mui/icons-material/Search';
 
 export default function CustomizedInputBase(props) {
-    const { onSearch, searchValue, onReset} = props;
+    const { onSearch, searchValue, onReset } = props;
 
     const [localSearchValue, setLocalSearchValue] = useState(searchValue);
 
@@ -21,6 +21,12 @@ export default function CustomizedInputBase(props) {
         onReset()
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            handleSearch();
+        }
+    };
+
     return (
         <Paper
             sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400, margin: '25px' }}
@@ -33,6 +39,7 @@ export default function CustomizedInputBase(props) {
                 placeholder="Search Passenger"
                 value={localSearchValue}
                 onChange={(e) => setLocalSearchValue(e.target.value)}
+                onKeyDown={handleKeyDown}
             />
             <IconButton type="button" onClick={handleSearch} sx={{ p: '10px' }} aria-label="search">
                 <SearchIcon />
