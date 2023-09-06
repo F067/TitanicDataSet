@@ -1,6 +1,8 @@
+import dotenv from 'dotenv'
+dotenv.config()
 import { connect } from 'mongoose';
 
-connect(`mongodb+srv://Greg:Greg120292@titanicdataset.wwzekvv.mongodb.net/`, {
+connect(`mongodb+srv://Greg:${process.env.MONGO_PWD}@titanicdataset.wwzekvv.mongodb.net/`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
