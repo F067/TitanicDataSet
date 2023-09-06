@@ -113,7 +113,7 @@ function Formular() {
 
       <div style={{ textAlign: "center", marginBottom: "15px", width: "auto", fontSize: "12px", display: "flex", justifyContent: "center" }}>
         {errorMessage && (
-          <div style={{ maxWidth: "80%", color: "red" , marginTop:'20px', fontWeight:'bold'}} className="error-message">{errorMessage}</div>
+          <div style={{ maxWidth: "80%", color: "red" , marginTop:'20px', fontWeight:'bold', fontFamily:'sans-serif'}} className="error-message">{errorMessage}</div>
         )}
       </div>
 
