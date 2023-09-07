@@ -12,7 +12,6 @@ import PassengersDetails from '../Components/PassengersDetails';
 function Layout() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
-  const passengers = useSelector((state) => state.passengers.passengers);
 
   const [isLoading, setIsLoading] = useState(true);
   const [searchValue, setSearchValue] = useState('');
@@ -20,7 +19,6 @@ function Layout() {
   const [unsortedPassengers, setUnsortedPassengers] = useState([]);
   const [selectedCriteria, setSelectedCriteria] = useState([]);
   const [reset, setReset] = useState(false);
-  const [reload, setReload] = useState(true)
   const [noResults, setNoResults] = useState(false);
 
   useEffect(() => {
@@ -149,7 +147,7 @@ function Layout() {
             </div>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}>
-            <Passenger filteredPassengers={filteredPassengers} isLoading={isLoading} noResults={noResults} reload={reload} />
+            <Passenger filteredPassengers={filteredPassengers} isLoading={isLoading} noResults={noResults} />
           </div>
         </div>
       )}
